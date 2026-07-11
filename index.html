@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position Sizer — Download</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #080c14;
+    color: #e8edf5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .card {
+    max-width: 420px;
+    width: 100%;
+  }
+  .icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: linear-gradient(135deg, #1a4a7a, #4a90d9);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 20px;
+  }
+  h1 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  p { font-size: 14px; color: #7a8499; margin-bottom: 24px; line-height: 1.5; }
+  .btn {
+    display: inline-block;
+    background: #4a90d9;
+    color: #080c14;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .btn:active { background: #3a7ab8; }
+  .note {
+    font-size: 12px;
+    color: #4a5568;
+    line-height: 1.6;
+    background: #0d1420;
+    border: 1px solid #1a2335;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 20px;
+    text-align: left;
+  }
+  .note b { color: #b0bcd4; }
+  .fallback {
+    font-size: 11px;
+    color: #4a5568;
+    margin-top: 20px;
+    word-break: break-all;
+  }
+  .fallback a { color: #4a90d9; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">⚡</div>
+    <h1>Position Sizer</h1>
+    <p>Free position size, risk:reward, PnL &amp; fee calculator for traders. 100% offline. No account needed.</p>
+
+    <a class="btn" id="downloadBtn" href="#">⬇ Download for Android</a>
+
+    <div class="note">
+      <b>Note:</b> Since this app isn't on the Play Store yet, Android will show an "unknown source" warning when installing — that's normal, just tap install anyway.
+      <br><br>
+      If the button above doesn't start a download, tap the menu (⋮) in this browser and choose <b>"Open in Chrome"</b> or your default browser, then tap the button again.
+    </div>
+
+    <div class="fallback">
+      Direct link: <a id="fallbackLink" href="#">tap here if the button above doesn't work</a>
+    </div>
+  </div>
+
+  <script>
+    // Always points at the latest published release — update this one line for future major redirects if the repo ever changes.
+    const APK_URL = 'https://github.com/senior-master2/a1/releases/latest/download/app-release.apk';
+
+    document.getElementById('downloadBtn').href = APK_URL;
+    document.getElementById('fallbackLink').href = APK_URL;
+
+    // Auto-redirect after a brief moment, but only if not opened inside a known
+    // in-app browser (Facebook/Instagram/Telegram webviews often block auto-redirects
+    // or handle them unreliably) — so we keep the manual button as the primary path
+    // and only auto-trigger for normal browsers.
+    const ua = navigator.userAgent || '';
+    const isInAppBrowser = /FBAN|FBAV|Instagram|Telegram/i.test(ua);
+    if (!isInAppBrowser) {
+      setTimeout(() => {
+        window.location.href = APK_URL;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
