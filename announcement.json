@@ -1,6 +1,12 @@
 {
-  "id": "ahhohhohadd",
-  "text": "Dear user, New app is ready. Hurry up and get your updates ready. please rate this app",
-  "url": "https://github.com/senior-master2/position-sizer/releases/download/build-23/app-release.apk"
+  "id": "1",
+  "text": "Welcome to Position Sizeer. 🎉  For any issue, please contact us👍,(button at the bottom of this page.",
+  "url": "",
+  "linkLabel": "Learn more →",
+  "color": "#5eb3ff",
+  "textColor": "#c8d6ff",
+  "fontSize": 12,
+  "padding": "12px 14px",
+  "size": ""
 }
-  
+
